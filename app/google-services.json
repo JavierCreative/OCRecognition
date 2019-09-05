@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "897722906730",
+    "firebase_url": "https://ocrecognition-ebad5.firebaseio.com",
+    "project_id": "ocrecognition-ebad5",
+    "storage_bucket": "ocrecognition-ebad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897722906730:android:9b7c45ed95d39956913213",
+        "android_client_info": {
+          "package_name": "com.example.ocrecognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897722906730-ivu8pphh7q77ln7vr6gkn4hoe40h90h4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ocrecognition",
+            "certificate_hash": "c04e9d95f4e42a54d04d32936a3a5c38784ef774"
+          }
+        },
+        {
+          "client_id": "897722906730-0pl0defgcjtnn2j5fv8mn8e8jkedl4su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb8cjSSPHoDuebr-VS_7dLBqx908V6RSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897722906730-0pl0defgcjtnn2j5fv8mn8e8jkedl4su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
