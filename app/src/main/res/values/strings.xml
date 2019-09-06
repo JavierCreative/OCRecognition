@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">OCRecognition</string>
     <string name="the_simplest_ocr">The simplest OCR</string>
-    <string name="made_with">Made with</string>
+    <string name="made_with">Made it with</string>
     <string name="open_camera">Open camera</string>
     <string name="open_gallery">Open gallery</string>
+    <string name="analyze">Analyze</string>
 </resources>

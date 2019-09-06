@@ -53,7 +53,7 @@
                 android:layout_width="120dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/ic_camera"
+                android:src="@drawable/ic_viewfinder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

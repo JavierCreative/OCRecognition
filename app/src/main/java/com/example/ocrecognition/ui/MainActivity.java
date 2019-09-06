@@ -4,9 +4,12 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -42,14 +45,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        if (hasPermissions())
-        {
-
-        }
-        else
-        {
-            finish();
-        }
+        hasPermissions();
     }
 
     private boolean hasPermissions()
@@ -92,7 +88,23 @@ public class MainActivity extends AppCompatActivity
                 {
                     if  (ActivityCompat.shouldShowRequestPermissionRationale(this,entry.getKey()))
                     {
-                        showDialog();
+                        showDialogAlert("",
+                                "This app needs Camera, Storage and Internet connection to work wothout problems",
+                                "Yes, Grant permissions", "No, Exit app", (dialogInterface, i) -> {
+                                    dialogInterface.dismiss();
+                                    hasPermissions();
+                                });
+                    }
+                    else
+                    {
+                        showDialogAlert("",
+                                "you have denied some permissions. Allow all permissions at [Settings] > [Permissions]",
+                                "Go to settings", "No, Exit app", (dialogInterface, i) -> {
+                                    dialogInterface.dismiss();
+                                    Intent settings = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                            Uri.fromParts("package",getPackageName(),null));
+                                    settings.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                });
                     }
                 }
             }
@@ -100,8 +112,18 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void showDialog(String title, String message, DialogInterface.OnCancelListener listener)
+    private void showDialogAlert(String title, String message, String buttonPositive, String buttonNegative, DialogInterface.OnClickListener listener)
     {
+        AlertDialog alert = new AlertDialog
+                .Builder(this)
+                .setMessage(message)
+                .setPositiveButton(buttonPositive,listener)
+                .setNegativeButton(buttonNegative, ((dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                    finish();
+                })).create();
+
+        alert.show();
 
     }
 
