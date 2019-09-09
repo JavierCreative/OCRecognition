@@ -12,7 +12,6 @@ import android.os.Handler;
 import com.example.ocrecognition.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

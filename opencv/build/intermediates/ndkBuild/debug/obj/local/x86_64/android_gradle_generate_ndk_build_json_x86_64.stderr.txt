@@ -1,0 +1,2 @@
+process_begin: CreateProcess(NULL, "", ...) failed.
+C:/Users/PROFUTURO/AppData/Local/Android/Sdk/ndk/20.0.5594570/build//../build/core/build-all.mk:94: Android NDK: WARNING: There are no modules to build in this project!    
